@@ -10349,6 +10349,231 @@ Elm.Html.make = function (_elm) {
                              ,menu: menu};
 };
 Elm.Html = Elm.Html || {};
+Elm.Html.Attributes = Elm.Html.Attributes || {};
+Elm.Html.Attributes.make = function (_elm) {
+   "use strict";
+   _elm.Html = _elm.Html || {};
+   _elm.Html.Attributes = _elm.Html.Attributes || {};
+   if (_elm.Html.Attributes.values) return _elm.Html.Attributes.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Json$Encode = Elm.Json.Encode.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $String = Elm.String.make(_elm),
+   $VirtualDom = Elm.VirtualDom.make(_elm);
+   var _op = {};
+   var attribute = $VirtualDom.attribute;
+   var contextmenu = function (value) {    return A2(attribute,"contextmenu",value);};
+   var property = $VirtualDom.property;
+   var stringProperty = F2(function (name,string) {    return A2(property,name,$Json$Encode.string(string));});
+   var $class = function (name) {    return A2(stringProperty,"className",name);};
+   var id = function (name) {    return A2(stringProperty,"id",name);};
+   var title = function (name) {    return A2(stringProperty,"title",name);};
+   var accesskey = function ($char) {    return A2(stringProperty,"accessKey",$String.fromChar($char));};
+   var dir = function (value) {    return A2(stringProperty,"dir",value);};
+   var draggable = function (value) {    return A2(stringProperty,"draggable",value);};
+   var dropzone = function (value) {    return A2(stringProperty,"dropzone",value);};
+   var itemprop = function (value) {    return A2(stringProperty,"itemprop",value);};
+   var lang = function (value) {    return A2(stringProperty,"lang",value);};
+   var tabindex = function (n) {    return A2(stringProperty,"tabIndex",$Basics.toString(n));};
+   var charset = function (value) {    return A2(stringProperty,"charset",value);};
+   var content = function (value) {    return A2(stringProperty,"content",value);};
+   var httpEquiv = function (value) {    return A2(stringProperty,"httpEquiv",value);};
+   var language = function (value) {    return A2(stringProperty,"language",value);};
+   var src = function (value) {    return A2(stringProperty,"src",value);};
+   var height = function (value) {    return A2(stringProperty,"height",$Basics.toString(value));};
+   var width = function (value) {    return A2(stringProperty,"width",$Basics.toString(value));};
+   var alt = function (value) {    return A2(stringProperty,"alt",value);};
+   var preload = function (value) {    return A2(stringProperty,"preload",value);};
+   var poster = function (value) {    return A2(stringProperty,"poster",value);};
+   var kind = function (value) {    return A2(stringProperty,"kind",value);};
+   var srclang = function (value) {    return A2(stringProperty,"srclang",value);};
+   var sandbox = function (value) {    return A2(stringProperty,"sandbox",value);};
+   var srcdoc = function (value) {    return A2(stringProperty,"srcdoc",value);};
+   var type$ = function (value) {    return A2(stringProperty,"type",value);};
+   var value = function (value) {    return A2(stringProperty,"value",value);};
+   var placeholder = function (value) {    return A2(stringProperty,"placeholder",value);};
+   var accept = function (value) {    return A2(stringProperty,"accept",value);};
+   var acceptCharset = function (value) {    return A2(stringProperty,"acceptCharset",value);};
+   var action = function (value) {    return A2(stringProperty,"action",value);};
+   var autocomplete = function (bool) {    return A2(stringProperty,"autocomplete",bool ? "on" : "off");};
+   var autosave = function (value) {    return A2(stringProperty,"autosave",value);};
+   var enctype = function (value) {    return A2(stringProperty,"enctype",value);};
+   var formaction = function (value) {    return A2(stringProperty,"formAction",value);};
+   var list = function (value) {    return A2(stringProperty,"list",value);};
+   var minlength = function (n) {    return A2(stringProperty,"minLength",$Basics.toString(n));};
+   var maxlength = function (n) {    return A2(stringProperty,"maxLength",$Basics.toString(n));};
+   var method = function (value) {    return A2(stringProperty,"method",value);};
+   var name = function (value) {    return A2(stringProperty,"name",value);};
+   var pattern = function (value) {    return A2(stringProperty,"pattern",value);};
+   var size = function (n) {    return A2(stringProperty,"size",$Basics.toString(n));};
+   var $for = function (value) {    return A2(stringProperty,"htmlFor",value);};
+   var form = function (value) {    return A2(stringProperty,"form",value);};
+   var max = function (value) {    return A2(stringProperty,"max",value);};
+   var min = function (value) {    return A2(stringProperty,"min",value);};
+   var step = function (n) {    return A2(stringProperty,"step",n);};
+   var cols = function (n) {    return A2(stringProperty,"cols",$Basics.toString(n));};
+   var rows = function (n) {    return A2(stringProperty,"rows",$Basics.toString(n));};
+   var wrap = function (value) {    return A2(stringProperty,"wrap",value);};
+   var usemap = function (value) {    return A2(stringProperty,"useMap",value);};
+   var shape = function (value) {    return A2(stringProperty,"shape",value);};
+   var coords = function (value) {    return A2(stringProperty,"coords",value);};
+   var challenge = function (value) {    return A2(stringProperty,"challenge",value);};
+   var keytype = function (value) {    return A2(stringProperty,"keytype",value);};
+   var align = function (value) {    return A2(stringProperty,"align",value);};
+   var cite = function (value) {    return A2(stringProperty,"cite",value);};
+   var href = function (value) {    return A2(stringProperty,"href",value);};
+   var target = function (value) {    return A2(stringProperty,"target",value);};
+   var downloadAs = function (value) {    return A2(stringProperty,"download",value);};
+   var hreflang = function (value) {    return A2(stringProperty,"hreflang",value);};
+   var media = function (value) {    return A2(stringProperty,"media",value);};
+   var ping = function (value) {    return A2(stringProperty,"ping",value);};
+   var rel = function (value) {    return A2(stringProperty,"rel",value);};
+   var datetime = function (value) {    return A2(stringProperty,"datetime",value);};
+   var pubdate = function (value) {    return A2(stringProperty,"pubdate",value);};
+   var start = function (n) {    return A2(stringProperty,"start",$Basics.toString(n));};
+   var colspan = function (n) {    return A2(stringProperty,"colSpan",$Basics.toString(n));};
+   var headers = function (value) {    return A2(stringProperty,"headers",value);};
+   var rowspan = function (n) {    return A2(stringProperty,"rowSpan",$Basics.toString(n));};
+   var scope = function (value) {    return A2(stringProperty,"scope",value);};
+   var manifest = function (value) {    return A2(stringProperty,"manifest",value);};
+   var boolProperty = F2(function (name,bool) {    return A2(property,name,$Json$Encode.bool(bool));});
+   var hidden = function (bool) {    return A2(boolProperty,"hidden",bool);};
+   var contenteditable = function (bool) {    return A2(boolProperty,"contentEditable",bool);};
+   var spellcheck = function (bool) {    return A2(boolProperty,"spellcheck",bool);};
+   var async = function (bool) {    return A2(boolProperty,"async",bool);};
+   var defer = function (bool) {    return A2(boolProperty,"defer",bool);};
+   var scoped = function (bool) {    return A2(boolProperty,"scoped",bool);};
+   var autoplay = function (bool) {    return A2(boolProperty,"autoplay",bool);};
+   var controls = function (bool) {    return A2(boolProperty,"controls",bool);};
+   var loop = function (bool) {    return A2(boolProperty,"loop",bool);};
+   var $default = function (bool) {    return A2(boolProperty,"default",bool);};
+   var seamless = function (bool) {    return A2(boolProperty,"seamless",bool);};
+   var checked = function (bool) {    return A2(boolProperty,"checked",bool);};
+   var selected = function (bool) {    return A2(boolProperty,"selected",bool);};
+   var autofocus = function (bool) {    return A2(boolProperty,"autofocus",bool);};
+   var disabled = function (bool) {    return A2(boolProperty,"disabled",bool);};
+   var multiple = function (bool) {    return A2(boolProperty,"multiple",bool);};
+   var novalidate = function (bool) {    return A2(boolProperty,"noValidate",bool);};
+   var readonly = function (bool) {    return A2(boolProperty,"readOnly",bool);};
+   var required = function (bool) {    return A2(boolProperty,"required",bool);};
+   var ismap = function (value) {    return A2(boolProperty,"isMap",value);};
+   var download = function (bool) {    return A2(boolProperty,"download",bool);};
+   var reversed = function (bool) {    return A2(boolProperty,"reversed",bool);};
+   var classList = function (list) {    return $class(A2($String.join," ",A2($List.map,$Basics.fst,A2($List.filter,$Basics.snd,list))));};
+   var style = function (props) {
+      return A2(property,
+      "style",
+      $Json$Encode.object(A2($List.map,function (_p0) {    var _p1 = _p0;return {ctor: "_Tuple2",_0: _p1._0,_1: $Json$Encode.string(_p1._1)};},props)));
+   };
+   var key = function (k) {    return A2(stringProperty,"key",k);};
+   return _elm.Html.Attributes.values = {_op: _op
+                                        ,key: key
+                                        ,style: style
+                                        ,$class: $class
+                                        ,classList: classList
+                                        ,id: id
+                                        ,title: title
+                                        ,hidden: hidden
+                                        ,type$: type$
+                                        ,value: value
+                                        ,checked: checked
+                                        ,placeholder: placeholder
+                                        ,selected: selected
+                                        ,accept: accept
+                                        ,acceptCharset: acceptCharset
+                                        ,action: action
+                                        ,autocomplete: autocomplete
+                                        ,autofocus: autofocus
+                                        ,autosave: autosave
+                                        ,disabled: disabled
+                                        ,enctype: enctype
+                                        ,formaction: formaction
+                                        ,list: list
+                                        ,maxlength: maxlength
+                                        ,minlength: minlength
+                                        ,method: method
+                                        ,multiple: multiple
+                                        ,name: name
+                                        ,novalidate: novalidate
+                                        ,pattern: pattern
+                                        ,readonly: readonly
+                                        ,required: required
+                                        ,size: size
+                                        ,$for: $for
+                                        ,form: form
+                                        ,max: max
+                                        ,min: min
+                                        ,step: step
+                                        ,cols: cols
+                                        ,rows: rows
+                                        ,wrap: wrap
+                                        ,href: href
+                                        ,target: target
+                                        ,download: download
+                                        ,downloadAs: downloadAs
+                                        ,hreflang: hreflang
+                                        ,media: media
+                                        ,ping: ping
+                                        ,rel: rel
+                                        ,ismap: ismap
+                                        ,usemap: usemap
+                                        ,shape: shape
+                                        ,coords: coords
+                                        ,src: src
+                                        ,height: height
+                                        ,width: width
+                                        ,alt: alt
+                                        ,autoplay: autoplay
+                                        ,controls: controls
+                                        ,loop: loop
+                                        ,preload: preload
+                                        ,poster: poster
+                                        ,$default: $default
+                                        ,kind: kind
+                                        ,srclang: srclang
+                                        ,sandbox: sandbox
+                                        ,seamless: seamless
+                                        ,srcdoc: srcdoc
+                                        ,reversed: reversed
+                                        ,start: start
+                                        ,align: align
+                                        ,colspan: colspan
+                                        ,rowspan: rowspan
+                                        ,headers: headers
+                                        ,scope: scope
+                                        ,async: async
+                                        ,charset: charset
+                                        ,content: content
+                                        ,defer: defer
+                                        ,httpEquiv: httpEquiv
+                                        ,language: language
+                                        ,scoped: scoped
+                                        ,accesskey: accesskey
+                                        ,contenteditable: contenteditable
+                                        ,contextmenu: contextmenu
+                                        ,dir: dir
+                                        ,draggable: draggable
+                                        ,dropzone: dropzone
+                                        ,itemprop: itemprop
+                                        ,lang: lang
+                                        ,spellcheck: spellcheck
+                                        ,tabindex: tabindex
+                                        ,challenge: challenge
+                                        ,keytype: keytype
+                                        ,cite: cite
+                                        ,datetime: datetime
+                                        ,pubdate: pubdate
+                                        ,manifest: manifest
+                                        ,property: property
+                                        ,attribute: attribute};
+};
+Elm.Html = Elm.Html || {};
 Elm.Html.Events = Elm.Html.Events || {};
 Elm.Html.Events.make = function (_elm) {
    "use strict";
@@ -10453,55 +10678,89 @@ Elm.StartApp.make = function (_elm) {
    var Config = F4(function (a,b,c,d) {    return {init: a,update: b,view: c,inputs: d};});
    return _elm.StartApp.values = {_op: _op,start: start,Config: Config,App: App};
 };
-Elm.Circles = Elm.Circles || {};
-Elm.Circles.make = function (_elm) {
+Elm.About = Elm.About || {};
+Elm.About.make = function (_elm) {
    "use strict";
-   _elm.Circles = _elm.Circles || {};
-   if (_elm.Circles.values) return _elm.Circles.values;
+   _elm.About = _elm.About || {};
+   if (_elm.About.values) return _elm.About.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
-   $Color = Elm.Color.make(_elm),
    $Debug = Elm.Debug.make(_elm),
    $Effects = Elm.Effects.make(_elm),
-   $Graphics$Collage = Elm.Graphics.Collage.make(_elm),
-   $Graphics$Element = Elm.Graphics.Element.make(_elm),
+   $Html = Elm.Html.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm);
    var _op = {};
-   var view = F2(function (address,model) {    return A3($Graphics$Collage.collage,400,400,_U.list([]));});
+   var view = F2(function (address,model) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(model.text)]));});
    var update = F2(function (action,model) {    var _p0 = action;return {ctor: "_Tuple2",_0: model,_1: $Effects.none};});
-   var initialModel = {circles: _U.list([])};
-   var Model = function (a) {    return {circles: a};};
-   var Circle = F3(function (a,b,c) {    return {position: a,radius: b,color: c};});
+   var initialModel = {text: "Some about text"};
+   var Model = function (a) {    return {text: a};};
    var NoOp = {ctor: "NoOp"};
-   return _elm.Circles.values = {_op: _op,initialModel: initialModel,update: update,view: view,Model: Model};
+   return _elm.About.values = {_op: _op,initialModel: initialModel,update: update,view: view,Model: Model};
 };
-Elm.Squares = Elm.Squares || {};
-Elm.Squares.make = function (_elm) {
+Elm.Posts = Elm.Posts || {};
+Elm.Posts.make = function (_elm) {
    "use strict";
-   _elm.Squares = _elm.Squares || {};
-   if (_elm.Squares.values) return _elm.Squares.values;
+   _elm.Posts = _elm.Posts || {};
+   if (_elm.Posts.values) return _elm.Posts.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
-   $Color = Elm.Color.make(_elm),
    $Debug = Elm.Debug.make(_elm),
    $Effects = Elm.Effects.make(_elm),
-   $Graphics$Collage = Elm.Graphics.Collage.make(_elm),
-   $Graphics$Element = Elm.Graphics.Element.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $Html$Events = Elm.Html.Events.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm);
    var _op = {};
-   var view = F2(function (address,model) {    return A3($Graphics$Collage.collage,400,400,_U.list([]));});
-   var update = F2(function (action,model) {    var _p0 = action;return {ctor: "_Tuple2",_0: model,_1: $Effects.none};});
-   var initialModel = {squares: _U.list([])};
-   var Model = function (a) {    return {squares: a};};
-   var Square = F3(function (a,b,c) {    return {position: a,side: b,color: c};});
-   var NoOp = {ctor: "NoOp"};
-   return _elm.Squares.values = {_op: _op,initialModel: initialModel,update: update,view: view,Model: Model};
+   var update = F2(function (action,model) {
+      var _p0 = action;
+      if (_p0.ctor === "ViewList") {
+            return {ctor: "_Tuple2",_0: _U.update(model,{currentPost: $Maybe.Nothing}),_1: $Effects.none};
+         } else {
+            return {ctor: "_Tuple2",_0: _U.update(model,{currentPost: $Maybe.Just(_p0._0)}),_1: $Effects.none};
+         }
+   });
+   var initialPosts = _U.list([{title: "First Post"
+                               ,summary: "Some things are afoot!"
+                               ,body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in blandit tellus, vitae porttitor ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In sagittis nulla ac maximus lobortis. Suspendisse eu condimentum tellus."
+                               ,id: 0}
+                              ,{title: "Second Post",summary: "I lost my pants",body: "Do you know where my pants went?",id: 1}]);
+   var initialModel = {posts: initialPosts,currentPost: $Maybe.Nothing};
+   var Model = F2(function (a,b) {    return {posts: a,currentPost: b};});
+   var Post = F4(function (a,b,c,d) {    return {title: a,summary: b,body: c,id: d};});
+   var ViewPost = function (a) {    return {ctor: "ViewPost",_0: a};};
+   var viewPostSummary = F2(function (address,post) {
+      return A2($Html.div,
+      _U.list([]),
+      _U.list([A2($Html.a,
+              _U.list([$Html$Attributes.href("#"),A2($Html$Events.onClick,address,ViewPost(post))]),
+              _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text(post.title)]))]))
+              ,A2($Html.p,_U.list([]),_U.list([$Html.text(post.summary)]))]));
+   });
+   var ViewList = {ctor: "ViewList"};
+   var viewPost = F2(function (address,post) {
+      return A2($Html.div,
+      _U.list([]),
+      _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text(post.title)]))
+              ,A2($Html.p,_U.list([]),_U.list([$Html.text(post.body)]))
+              ,A2($Html.a,_U.list([$Html$Attributes.href("#"),A2($Html$Events.onClick,address,ViewList)]),_U.list([$Html.text("Back")]))]));
+   });
+   var view = F2(function (address,model) {
+      var _p1 = model.currentPost;
+      if (_p1.ctor === "Just") {
+            return A2(viewPost,address,_p1._0);
+         } else {
+            return A2($Html.div,
+            _U.list([]),
+            _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Posts")])),A2($Html.div,_U.list([]),A2($List.map,viewPostSummary(address),model.posts))]));
+         }
+   });
+   return _elm.Posts.values = {_op: _op,initialModel: initialModel,update: update,view: view,Model: Model};
 };
 Elm.Nav = Elm.Nav || {};
 Elm.Nav.make = function (_elm) {
@@ -10513,6 +10772,7 @@ Elm.Nav.make = function (_elm) {
    $Debug = Elm.Debug.make(_elm),
    $Effects = Elm.Effects.make(_elm),
    $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $Html$Events = Elm.Html.Events.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
@@ -10528,18 +10788,18 @@ Elm.Nav.make = function (_elm) {
          }
    });
    var Model = function (a) {    return {currentTab: a};};
-   var Circles = {ctor: "Circles"};
-   var Squares = {ctor: "Squares"};
-   var initialModel = {currentTab: Squares};
+   var About = {ctor: "About"};
+   var Posts = {ctor: "Posts"};
+   var initialModel = {currentTab: Posts};
    var ChooseTab = function (a) {    return {ctor: "ChooseTab",_0: a};};
    var view = F2(function (address,model) {
       return A2($Html.nav,
       _U.list([]),
-      _U.list([A2($Html.a,_U.list([A2($Html$Events.onClick,address,ChooseTab(Circles))]),_U.list([$Html.text("Circles")]))
-              ,A2($Html.a,_U.list([A2($Html$Events.onClick,address,ChooseTab(Squares))]),_U.list([$Html.text("Squares")]))]));
+      _U.list([A2($Html.a,_U.list([$Html$Attributes.href("#"),A2($Html$Events.onClick,address,ChooseTab(Posts))]),_U.list([$Html.text("Posts")]))
+              ,A2($Html.a,_U.list([$Html$Attributes.href("#"),A2($Html$Events.onClick,address,ChooseTab(About))]),_U.list([$Html.text("About")]))]));
    });
    var NoOp = {ctor: "NoOp"};
-   return _elm.Nav.values = {_op: _op,initialModel: initialModel,update: update,view: view,Model: Model,Squares: Squares,Circles: Circles};
+   return _elm.Nav.values = {_op: _op,initialModel: initialModel,update: update,view: view,Model: Model,Posts: Posts,About: About};
 };
 Elm.Main = Elm.Main || {};
 Elm.Main.make = function (_elm) {
@@ -10547,39 +10807,39 @@ Elm.Main.make = function (_elm) {
    _elm.Main = _elm.Main || {};
    if (_elm.Main.values) return _elm.Main.values;
    var _U = Elm.Native.Utils.make(_elm),
+   $About = Elm.About.make(_elm),
    $Basics = Elm.Basics.make(_elm),
-   $Circles = Elm.Circles.make(_elm),
    $Debug = Elm.Debug.make(_elm),
    $Effects = Elm.Effects.make(_elm),
    $Html = Elm.Html.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Nav = Elm.Nav.make(_elm),
+   $Posts = Elm.Posts.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $Squares = Elm.Squares.make(_elm),
    $StartApp = Elm.StartApp.make(_elm),
    $Task = Elm.Task.make(_elm);
    var _op = {};
-   var initialModel = {circles: $Circles.initialModel,squares: $Squares.initialModel,nav: $Nav.initialModel};
+   var initialModel = {posts: $Posts.initialModel,about: $About.initialModel,nav: $Nav.initialModel};
    var init = {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none};
-   var Model = F3(function (a,b,c) {    return {circles: a,squares: b,nav: c};});
+   var Model = F3(function (a,b,c) {    return {posts: a,about: b,nav: c};});
    var Nav = function (a) {    return {ctor: "Nav",_0: a};};
-   var Squares = function (a) {    return {ctor: "Squares",_0: a};};
-   var Circles = function (a) {    return {ctor: "Circles",_0: a};};
+   var About = function (a) {    return {ctor: "About",_0: a};};
+   var Posts = function (a) {    return {ctor: "Posts",_0: a};};
    var update = F2(function (action,model) {
       var _p0 = action;
       switch (_p0.ctor)
-      {case "Circles": var _p1 = A2($Circles.update,_p0._0,model.circles);
-           var circles = _p1._0;
+      {case "Posts": var _p1 = A2($Posts.update,_p0._0,model.posts);
+           var posts = _p1._0;
            var newEffect = _p1._1;
-           var newModel = _U.update(model,{circles: circles});
-           return {ctor: "_Tuple2",_0: newModel,_1: A2($Effects.map,Circles,newEffect)};
-         case "Squares": var _p2 = A2($Squares.update,_p0._0,model.squares);
-           var squares = _p2._0;
+           var newModel = _U.update(model,{posts: posts});
+           return {ctor: "_Tuple2",_0: newModel,_1: A2($Effects.map,Posts,newEffect)};
+         case "About": var _p2 = A2($About.update,_p0._0,model.about);
+           var about = _p2._0;
            var newEffect = _p2._1;
-           var newModel = _U.update(model,{squares: squares});
-           return {ctor: "_Tuple2",_0: newModel,_1: A2($Effects.map,Squares,newEffect)};
+           var newModel = _U.update(model,{about: about});
+           return {ctor: "_Tuple2",_0: newModel,_1: A2($Effects.map,About,newEffect)};
          default: var _p3 = A2($Nav.update,_p0._0,model.nav);
            var nav = _p3._0;
            var newEffect = _p3._1;
@@ -10587,14 +10847,12 @@ Elm.Main.make = function (_elm) {
            return {ctor: "_Tuple2",_0: newModel,_1: A2($Effects.map,Nav,newEffect)};}
    });
    var subView = F2(function (address,model) {
-      return $Html.fromElement(function () {
-         var _p4 = model.nav.currentTab;
-         if (_p4.ctor === "Squares") {
-               return A2($Squares.view,A2($Signal.forwardTo,address,Squares),model.squares);
-            } else {
-               return A2($Circles.view,A2($Signal.forwardTo,address,Circles),model.circles);
-            }
-      }());
+      var _p4 = model.nav.currentTab;
+      if (_p4.ctor === "Posts") {
+            return A2($Posts.view,A2($Signal.forwardTo,address,Posts),model.posts);
+         } else {
+            return A2($About.view,A2($Signal.forwardTo,address,About),model.about);
+         }
    });
    var view = F2(function (address,model) {
       return A2($Html.section,_U.list([]),_U.list([A2($Nav.view,A2($Signal.forwardTo,address,Nav),model),A2(subView,address,model)]));
@@ -10603,8 +10861,8 @@ Elm.Main.make = function (_elm) {
    var main = app.html;
    var tasks = Elm.Native.Task.make(_elm).performSignal("tasks",app.tasks);
    return _elm.Main.values = {_op: _op
-                             ,Circles: Circles
-                             ,Squares: Squares
+                             ,Posts: Posts
+                             ,About: About
                              ,Nav: Nav
                              ,Model: Model
                              ,initialModel: initialModel

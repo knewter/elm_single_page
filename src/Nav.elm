@@ -1,7 +1,9 @@
 module Nav (Model, Action, Tab(..), initialModel, update, view) where
+
 import Effects exposing (Never, Effects)
 import Html exposing (..)
 import Html.Events exposing (..)
+import Html.Attributes exposing (href)
 
 
 type Action
@@ -10,8 +12,8 @@ type Action
 
 
 type Tab
-  = Squares
-  | Circles
+  = Posts
+  | About
 
 
 type alias Model =
@@ -21,19 +23,22 @@ type alias Model =
 
 initialModel : Model
 initialModel =
-  { currentTab = Squares }
+  { currentTab = Posts }
 
 
-update : Action -> Model -> (Model, Effects Action)
+update : Action -> Model -> ( Model, Effects Action )
 update action model =
   case action of
-    NoOp -> ( model, Effects.none )
+    NoOp ->
+      ( model, Effects.none )
+
     ChooseTab tab ->
       ( { model | currentTab = tab }, Effects.none )
 
 
 view address model =
-  nav []
-    [ a [onClick address (ChooseTab Circles)] [text "Circles"]
-    , a [onClick address (ChooseTab Squares)] [text "Squares"]
+  nav
+    []
+    [ a [ href "#", onClick address (ChooseTab Posts) ] [ text "Posts" ]
+    , a [ href "#", onClick address (ChooseTab About) ] [ text "About" ]
     ]

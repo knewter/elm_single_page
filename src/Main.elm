@@ -1,6 +1,8 @@
+module Main (..) where
+
 import StartApp
-import Circles
-import Squares
+import Posts
+import About
 import Nav
 import Task
 import Effects exposing (Never, Effects)
@@ -8,70 +10,82 @@ import Html exposing (..)
 
 
 type Action
-  = Circles Circles.Action
-  | Squares Squares.Action
+  = Posts Posts.Action
+  | About About.Action
   | Nav Nav.Action
 
 
 type alias Model =
-  { circles : Circles.Model
-  , squares : Squares.Model
+  { posts : Posts.Model
+  , about : About.Model
   , nav : Nav.Model
   }
 
 
 initialModel : Model
 initialModel =
-  { circles = Circles.initialModel
-  , squares = Squares.initialModel
+  { posts = Posts.initialModel
+  , about = About.initialModel
   , nav = Nav.initialModel
   }
 
 
-update : Action -> Model -> (Model, Effects Action)
+update : Action -> Model -> ( Model, Effects Action )
 update action model =
   case action of
-    Circles action ->
+    Posts action ->
       let
-        (circles, newEffect) = Circles.update action model.circles
-        newModel = { model | circles = circles }
+        ( posts, newEffect ) =
+          Posts.update action model.posts
+
+        newModel =
+          { model | posts = posts }
       in
-        (newModel, Effects.map Circles newEffect)
-    Squares action ->
+        ( newModel, Effects.map Posts newEffect )
+
+    About action ->
       let
-        (squares, newEffect) = Squares.update action model.squares
-        newModel = { model | squares = squares }
+        ( about, newEffect ) =
+          About.update action model.about
+
+        newModel =
+          { model | about = about }
       in
-        (newModel, Effects.map Squares newEffect)
+        ( newModel, Effects.map About newEffect )
+
     Nav action ->
       let
-        (nav, newEffect) = Nav.update action model.nav
-        newModel = { model | nav = nav }
+        ( nav, newEffect ) =
+          Nav.update action model.nav
+
+        newModel =
+          { model | nav = nav }
       in
-        (newModel, Effects.map Nav newEffect)
+        ( newModel, Effects.map Nav newEffect )
 
 
 subView : Signal.Address Action -> Model -> Html
 subView address model =
-  (case model.nav.currentTab of
-    Nav.Squares ->
-      Squares.view (Signal.forwardTo address Squares) model.squares
-    Nav.Circles ->
-      Circles.view (Signal.forwardTo address Circles) model.circles
-  ) |> fromElement
+  case model.nav.currentTab of
+    Nav.Posts ->
+      Posts.view (Signal.forwardTo address Posts) model.posts
+
+    Nav.About ->
+      About.view (Signal.forwardTo address About) model.about
 
 
 view : Signal.Address Action -> Model -> Html
 view address model =
-  section []
+  section
+    []
     [ Nav.view (Signal.forwardTo address Nav) model
     , subView address model
     ]
 
 
-init : (Model, Effects Action)
+init : ( Model, Effects Action )
 init =
-  (initialModel, Effects.none)
+  ( initialModel, Effects.none )
 
 
 app : StartApp.App Model
